@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type = "text/css "href="static\css\style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>  Login  </title>
+		<style>
+		html{
+			/*background:url('background1.jpg') no-repeat center center fixed*/
+		}
+		</style>
+  </head>
+
+  <body background = "background1.jpg">
+      <h1 style="text-align: center">Login here!</h1>
+      <strong>
+        <div class ="container">
+		<img src="Avatar.png" alt="Avatar">
+         <form method='POST'>
+		 <div class="form-input">
+		  <i class="fa fa-user fa-2x cust" aria-hidden="true"></i>
+          <input type = 'text', name = 'username' value="" placeholder="Enter Username"/><br>
+          <i class="fa fa-lock fa-2x cust" aria-hidden="true"></i>
+		  <input type = 'password', name = 'password' value="" placeholder="Enter Password"/><br>
+                    <input type = 'submit' name = 'submit' value = 'Login'/>
+          </div>
+		  </form>
+        </div>
+      </strong>
+      <div class ="content" style="text-align:center">
+        {%block content%}
+
+        {%endblock%}
+      </div>
+  </body>
+</html>
