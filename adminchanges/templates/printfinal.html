@@ -1,0 +1,44 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}
+    PRINT ACCOUNT
+{% endblock %}
+
+{% block content %}
+    <table border="1">
+        <thead>
+                <center><th>ID</th></center>
+                <center><th>USERNAME</th></center>
+                <center><th>FIRST NAME</th></center>
+                <center><th>MIDDLE NAME</th></center>
+                <center><th>LAST NAME</th></center>
+                <center><th>ROLE</th></center>
+        </thead>
+        <tbody>
+        {% for user in myUser %}
+            <tr>
+                <td><center>#{{ user.id }}</center></td>
+                <td><center>{{ user.username }}</center></td>
+                <td><center>{{ user.firstname }}</center></td>
+                <td><center>{{ user.middlename }}</center></td>
+                <td><center>{{ user.lastname }}</center></td>
+                <td><center>{{ user.officerrole }}</center></td>
+                <td><center>
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="usershit" id="myTest" value="">
+                        <input type="submit" value="DELETE">
+                    </form>
+                    </center>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% for user in myUser %}
+  <script>
+      document.getElementById('myTest').value = {{ user.username }};
+  </script>
+{% endfor %}
+{% endblock %}
